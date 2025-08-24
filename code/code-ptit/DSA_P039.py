@@ -1,4 +1,4 @@
-# TODO: WRONG ANSWER TREN CODE PTIT?
+# TODO: WRONG ANSWER
 def solve(matrix):
     n = len(matrix)
     count = 0
