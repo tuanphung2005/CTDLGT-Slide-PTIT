@@ -3,7 +3,10 @@ setlocal enabledelayedexpansion
 set "msg="
 for /f "delims=" %%f in ('git status --porcelain') do (
     set "line=%%f"
-    set "file=!line:~3!"
+        set "file=!line:~3!"
+    ) else (
+        set "file=!line:~3!"
+    )
     echo !file! | findstr /E ".py" >nul
     if not errorlevel 1 (
         set "name=!file:.py=!"
