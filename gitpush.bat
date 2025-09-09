@@ -1,12 +1,18 @@
 @echo off
+setlocal enabledelayedexpansion
+set "msg="
 for /f "delims=" %%f in ('git status --porcelain') do (
     set "line=%%f"
-    setlocal enabledelayedexpansion
     set "file=!line:~3!"
-    if not "!file!"=="" (
-        set "msg=!msg! !file!"
+    echo !file! | findstr /E ".py" >nul
+    if not errorlevel 1 (
+        set "name=!file:.py=!"
+        set "msg=!msg! !name!"
     )
-    endlocal
+)
+if not defined msg (
+    echo where .py man where.
+    exit /b
 )
 git add .
-git commit -m "%msg%"
+git commit -m "!msg:~1!"
