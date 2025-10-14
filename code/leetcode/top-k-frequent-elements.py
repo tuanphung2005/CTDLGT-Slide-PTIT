@@ -1,4 +1,3 @@
-# TODO: i dont understand this shit
 def topKFrequentElements(nums, k):
     freq = {}
 
@@ -23,7 +22,7 @@ def topKFrequentElements(nums, k):
                 return res
     return res
 
-nums = [1,2,1,2,1,2,3,1,3,2]
+nums = [1,2,1,2,1,2,3,1,3,2,3,3,3,3]
 k = 2
 
 print(topKFrequentElements(nums, k))

@@ -4,7 +4,7 @@ def check(A, S):
     # print(dp)
 
     for a in A:
-        print('a=', a)
+        # print('a=', a)
         for s in range(S, a - 1, -1):
             if dp[s - a] == True:
                 dp[s] = True
